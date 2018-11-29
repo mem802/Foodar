@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+
+	<h1>SUBMIT YOUR REQUEST</h1>
+<!-- <style>
+	input[type=email] {
+		width:60%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		box-sizing: border-box;
+	}
+	input[type=text] {
+		width:60%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		box-sizing: border-box;
+	}
+	
+</style> -->
+</head>
+<body onload='hidetotal'>
+	<div>
+
+		<!-- <p>Please fill out the form below.</p> -->
+		<form id="request">
+		<div>
+			<fieldset>
+			<legend>Please fill out the form below.</legend>
+			<label for="email"> Address: </label>
+			<br>
+			<input type="email" id="email" name="email" placeholder="Email"/>
+			
+
+			<label> Choose Your Style: </label>
+			<label class='radiolabel'><input type="radio" name="style" value="classic" onclick="calculatetotal()"/> 
+			Classic: This is a classic Treatment</label><br>
+			<label class='radiolabel'><input type="radio" name="style" vlaue="premium" onclick="calculatetotal()" /> 
+			Premium: pinky's up </label><br>
+			<label class='radiolabel'><input type="radio" name="style" value="royal" onclick="calculatetotal()" /> 
+			Royal: Your food is served on a silver platter. Literally.</label>
+		
+
+		
+			<label for="Restaurant"> Restaurant: </label>
+			<br>
+			<br>
+			<input type="text" id="restaurant" placeholder="Name">
+		
+		
+			<label> Tip: </label>
+			<label class='radiolabel' ><input type="radio" name="tip" value="10%" onclick="calculatetotal()" /> 10%: They did their job. </label><br>
+			<label class='radiolabel'><input type="radio" name="tip" value="15%" onclick="calculatetotal()" /> 15%: They made you feel special. </label><br>
+			<label class=radiolabel'><input type="radio" name="tip" value="20%" onclick="calculatetotal()" /> 20%: I wanna give them more, but this is all I have!</label>
+	
+
+			<div id="totalprice"></div>
+			</fieldset>
+		</div>
+		</form>
+	</div>
+
+<script type="text/javascript">
+		
+		var style_prices = new Array ();
+		style_prices[classic]=3;
+		style_prices[premium]=5;
+		style_prices[royal]=10;
+
+
+		function getstyleprice() 
+		{
+			var styleprice=0;
+			var theForm = document.forms["request"];
+			var selectedstyle = theForm.elements ["selectedstyle"];
+			for (var i = 0; i < selectedstyle.length; i++)
+			{
+				if(selectedstyle[i].checked)
+				{
+					styleprice = style_prices[selectedstyle[i].value];
+					break;
+				}
+			}
+			return styleprice;
+		}
+
+		var tip_prices = new array();
+		tip_prices[10%]= .10 * styleprice;
+		tip_prices[15%]= .15 * styleprice;
+		tip_prices[20%]= .20 * styleprice;
+
+		function tipprice()
+		{
+			var tipprice=0;
+			var theForm=document.forms["request"];
+			var selectedtip = theForm.elements ["selectedtip"];
+			for (var i=0; i<selectedtip; i++)
+			{
+				if(selectedtip[i].checked)
+				{
+					tipprice = tip_prices[selectedtip[i].value];
+					break;
+				}
+			}
+			return tipprice;
+		}
+
+		function calculatetotal()
+		{
+			var requestprice = getstyleprice() + gettipprice();
+			var divobj = document.getelementById('totalprice');
+			divobj.style.display = 'block';
+			divobj.innterHTML = "Total: "+ requestprice;
+		}
+
+		function hidetotal()
+		{
+			var divobj = document.getElementById('totalprice');
+			divobj.style.display='none';
+		}
+
+	</script>
+
+	<button type="submit"> Request
+
+
+
+	
+
+</body>
+</html>
