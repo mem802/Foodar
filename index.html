@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
+
+	<title>Homepage</title>
+
+	<script>
+		
+		setTimeout('document.getElementById("ad").style.display = ""', 5000);
+
+		function closeAd() {
+			document.getElementById("ad").style.display="none";
+		}
+
+
+	</script>
+
+	<style>
+		
+		.banner {
+			font-size:40pt;
+			font-family:sans-serif;
+			padding:15px
+			top:0;
+			text-align: center;
+			height: 100px;
+			background:black;
+			}
+
+	
+		table {
+			width:100%;
+			background:black;
+			margin:0;
+
+			}	
+	
+		.text {
+			position:absolute;
+			top:50%;
+			left:50%;
+			transform: translate(-50%,-50%);
+			color:white;
+			font-size:40pt;
+			font-family: 'Josefin Sans';
+			}
+
+		.zipcode {
+			font-size:20pt;
+			margin:40px;
+			}
+	
+		* {
+			box-sizing:border-box;
+			font-family: 'Josefin Sans';
+			margin:0;
+
+			}
+
+		.a1{
+			color:orange;
+		}
+		a {
+			color:white;
+		}
+		a:hover {
+				color:yellow;
+				background: black;
+		} 
+		footer{
+			background: black;
+			color:white;
+			height: 300px;
+		}
+		.table2{
+			width:100%;
+			text-align: center;
+			padding:20px;
+			font-size: 15pt;
+		}
+	</style>
+	
+	<div class="banner" id="ad" style="display:none;">
+		<a href="request.html">
+			<img src="advertisement.jpg" alt="Advertisement Here"
+			style="width:140px; border=0;">
+		</a>
+
+		<button onclick="closeAd()" > X </button>
+	</div>
+		
+</head>
+<body>
+	<div class="container">
+		<table>
+			<thead>
+				<tr>
+					<td><a href="index.html"><img src="logo.png" alt="Company Logo" style=" float:left; margin:12px; width:50%;"/></a></td>
+					<td><a class="a1" href="register.html" style="vertical-align:bottom; float:right; padding:40px;">Sign-In/Register</a></td> 
+				</tr>
+			</thead>
+		</table>
+	</div>
+	
+
+	
+	<div class="img">
+		<img src="recipeimage.jpg" alt="Recipe Image" style= "display:block; width:100%; margin:auto;"/>
+		<div class="text" style="text-align:center;">Try a new meal today!</div>
+
+	</div>
+	
+
+
+	<div class="zipcode">
+	<p>Find a driver near you!</p>
+	<br/>
+	<p2>Type in your zipcode below and click GO! </p2>
+	<br/>
+	</div>
+	
+	<div>
+	<form>
+		<input id="zipcode" type="number" name="zipcode" maxlength="5" style="padding:12px 20px; margin:0 40px;"/>
+		<button id="GO" type="submit"> GO! </button>
+	</form>
+
+	<script type="text/javascript">
+		
+				var btn = document.getElementById("GO");
+			btn.addEventListener("click", zipcodechecker);
+
+			function zipcodechecker() 
+			{
+				var zip=document.getElementById("zipcode").value;
+				if (zip >= 40000 && zip<= 50000)
+				{	
+				alert("We've got your area covered!");
+				}
+				else {
+				alert("Sorry! We haven't expanded into your area yet. Check back later");
+				}
+			}
+		
+	</script>
+
+	</br>
+	</br>
+
+	</div>
+
+	<footer>
+		<br/>
+		<br/>
+		<table class="table2" cellpadding="10">
+			<thead>
+				<td><a href="index.html" style="vertical-align:left;">Homepage</a></td>
+				<td>Privacy Policy</td>
+				<td>Lucky You :)</td>
+			</thead>
+			<tbody>
+				<td><a href="register.html" style="vertical-align:left;">Register</a></td>
+				<td>Terms&Conditions</td>
+			</tbody>
+			<tbody>
+				<td><a href="request.html" style="vertical-align:left">Request Page</a></td>
+			</tbody>
+			<tfoot>
+				<td><a href="about.html" style="vertical-align:left;">How It All Works!</a></td>
+			</tfoot>
+		</table>
+
+		<div style= "text-align:center;">
+			&copy 2015. All Rights Reserved.
+		</div>	
+
+	</footer>
+		
+</body>
+</html>

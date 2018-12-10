@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+	<link href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
+	
+	<title>Request</title>
+
+	<script type="text/javascript" src="request.js"></script>
+
+	<style>
+	
+	/*#wrap #TotalPrice
+	{
+		padding:10px;
+		font-weight:bold;
+		background-color:white;
+		background-image:url("request image.jpg");
+        background-size:contain;
+	
+	}*/
+
+	* {
+		box-sizing:border-box;
+		font-family: 'Josefin Sans';
+		
+		text-align: center;
+	}
+
+	#wrap {
+		background-image: url("requestimage.jpg");
+		background-size: cover;
+		width:100%;
+	}
+
+	.order {
+		margin:30px;
+		font-size: 15pt;
+	}
+
+	body {
+		margin:0;
+		background:black;
+	}
+
+	fieldset {
+		border:none;
+	}
+
+	 footer {
+        background:black;
+        color:white;
+        height:200px;
+        }
+
+	table{
+        width:100%;
+        text-align: center;
+        padding:20px;
+
+        }
+
+	
+
+	</style>
+
+</head>
+
+
+<body onload='hidetotal()'>
+
+ 	<div class="logo">
+        <h1>
+        <a href="index.html">
+        <img src="logo.png" alt="Company Logo" style=" float:left; margin:0; width:25%;"/>
+        </a>
+        </h1>
+   	</div>
+
+   	<br/><br/>
+   	<br/><br/>
+   	<br/><br/>
+   	<br/><br/>
+   	
+
+	<div id="wrap">
+
+	<br/><br/>
+   	<br/><br/>
+   	<br/><br/>
+
+		<h2>SUMBIT YOUR REQUEST</h2>
+
+		<br>
+
+		
+		<p class="emailinput"> Email Address </p>
+
+		<input class="email" type="email" name="email" placeholder="Email"/>
+
+		<br/>
+		
+		<form  action="" id="request" onsubmit="return false;">
+				
+				<div class="order">
+
+						<fieldset>
+							<legend> Please fill out the form below. </legend>
+
+							<h2> Choose Your Style: </h2>
+							<label class='radiolabel'><input type="radio" name="style" value="classic" onclick="calculateTotal()"/>Classic: This is a classic Treatment</label><br/>
+							<label class='radiolabel'><input type="radio" name="style" value="premium" onclick="calculateTotal()" />Premium: pinky's up </label><br/>
+							<label class='radiolabel'><input type="radio" name="style" value="royal" onclick="calculateTotal()" /> 
+							Royal: Your food is served on a silver platter. Literally.</label><br/>
+		
+		
+							<h3> Tip: </h3>
+							<label class='radiolabel' ><input type="radio" name="tip" value="ten" onclick="calculateTotal()" /> 10%: They did their job. </label><br/>
+							<label class='radiolabel'><input type="radio" name="tip" value="fifteen" onclick="calculateTotal()" /> 15%: They made you feel special. </label><br/>
+							<label class='radiolabel'><input type="radio" name="tip" value="twenty" onclick="calculateTotal()" /> 20%: I wanna give them more, but this is all I have!</label><br/>
+	
+							<br/>
+							<br/>
+
+							<div id="TotalPrice"></div>
+
+						</fieldset>
+				</div>
+
+				<div id="restaurant">
+						<p> Restaurant: </p>
+						<input class="restaurantname" type="text" placeholder="Name" size="25">
+				</div>
+
+				<br/><br/>
+
+				<input type="submit" id="requestbutton" value="submit" onclick="calculateTotal()"/>
+
+				<br/><br/>
+				<br/><br/>
+				<br/><br/>
+				<br/><br/>
+
+		</form>
+
+	</div>	
+			
+</body>	
+
+
+	<footer>
+		<br/><br/>
+		<table class="table2" cellpadding="10">
+			<thead>
+				<td><a href="index.html" style="vertical-align:left;">Homepage</a></td>
+				<td>Privacy Policy</td>
+				<td>Lucky You :)</td>
+			</thead>
+			<tbody>
+				<td><a href="register.html" style="vertical-align:left;">Register</a></td>
+				<td>Terms&Conditions</td>
+			</tbody>
+			<tbody>
+				<td><a href="request.html" style="vertical-align:left">Request Page</a></td>
+			</tbody>
+			<tfoot>
+				<td><a href="about.html" style="vertical-align:left;">How It All Works!</a></td>
+			</tfoot>
+		</table>
+		<br>
+		<br>
+		<div style="text-align:center;">
+			&copy 2015. All Rights Reserved.
+		</div>	
+
+		<br/><br/>
+
+	</footer>
+</html>
